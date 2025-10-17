@@ -52,14 +52,12 @@
         <origin xyz="-0.190 -0.118 0.0" rpy="0.0 0.0 0.0"/>
     </xacro:kelo_drive_top>
 
-
-    <!-- LIDAR Mounting -->
-
-    <xacro:lidar_mount name="front" parent="skratch_base" ros_topic="/scan_front" update_rate="10" min_angle="0.0" max_angle="-3.14">
+    <!-- Lidar Mount -->
+    <xacro:lidar_mount name="front" parent="skratch_base">
         <origin xyz="0.272 -0.158 0.1416" rpy="0.0 0.0 0.0"/>
     </xacro:lidar_mount>
 
-    <xacro:lidar_mount name="rear" parent="skratch_base" ros_topic="/scan_rear" update_rate="10" min_angle="0.0" max_angle="-3.14">
+    <xacro:lidar_mount name="rear" parent="skratch_base">
         <origin xyz="-0.272 0.167 0.1416" rpy="0.0 0.0 3.14"/>
     </xacro:lidar_mount>
 

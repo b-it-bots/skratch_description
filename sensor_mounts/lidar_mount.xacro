@@ -8,9 +8,8 @@ Authors:
 Chaitanya Gumudala
 -->
 <robot name="lidar_mount" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:macro name="lidar_mount" params="name parent *origin ros_topic update_rate min_angle max_angle">
+    <xacro:macro name="lidar_mount" params="name parent *origin">
         <xacro:include filename="$(find skratch_description)/sensors/hokuyo_urg_04lx_ug01.xacro"/>
-        
         <link name="${name}_lidar_mount">
             <inertial>
                 <mass value="0.1"/>
@@ -41,8 +40,22 @@ Chaitanya Gumudala
             <parent link="${parent}"/>
             <child link="${name}_lidar_mount"/>
         </joint>
-        <xacro:hokuyo_urg_lidar name="${name}_hokuyo_urg_lidar" parent="${name}_lidar_mount" ros_topic="${ros_topic}" update_rate="${update_rate}" min_angle="${min_angle}" max_angle="${max_angle}">
-            <origin xyz="0.045 -0.045 -0.1" rpy="3.14 0.0 -0.77"/>
-        </xacro:hokuyo_urg_lidar>
+
+        <xacro:if value="$(arg use_sim)">
+            <xacro:hokuyo_urg_lidar 
+                name="${name}_lidar" 
+                ros_topic="/${name}_scan"
+                update_rate="10"
+                min_angle="-1.57"
+                max_angle="2.35" />
+
+            <joint name="${name}_lidar_joint" type="fixed">
+                <origin xyz="0.048 -0.048 -0.10" rpy="0.0 0.0 -0.785"/>
+                <parent link="${name}_lidar_mount"/>
+                <child link="${name}_lidar_stl_link"/>
+            </joint>
+        </xacro:if>
+
+
     </xacro:macro>
 </robot>
