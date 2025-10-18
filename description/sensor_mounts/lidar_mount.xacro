@@ -9,7 +9,7 @@ Chaitanya Gumudala
 -->
 <robot name="lidar_mount" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <xacro:macro name="lidar_mount" params="name parent *origin">
-        <xacro:include filename="$(find skratch_description)/sensors/hokuyo_urg_04lx_ug01.xacro"/>
+        <xacro:include filename="$(find skratch_description)/description/sensors/hokuyo_urg_04lx_ug01.xacro"/>
         <link name="${name}_lidar_mount">
             <inertial>
                 <mass value="0.1"/>

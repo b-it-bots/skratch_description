@@ -12,7 +12,7 @@ Using kelo drive wheels with some modifications to suit skratch bot
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Include the mid part macro -->
-  <xacro:include filename="$(find skratch_description)/wheels/kelo_drive_mid.urdf.xacro" />
+  <xacro:include filename="$(find skratch_description)/description/wheels/kelo_drive_mid.urdf.xacro" />
 
   <!--
     Macro for full KELO drive:

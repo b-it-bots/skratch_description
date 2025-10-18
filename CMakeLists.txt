@@ -4,7 +4,7 @@ project(skratch_description)
 find_package(ament_cmake REQUIRED)
 
 
-install(DIRECTORY meshes gazebo base launch wheels urdf config sensors sensor_mounts
+install(DIRECTORY meshes gazebo launch urdf config description
 	DESTINATION share/${PROJECT_NAME}/)
 
 ament_package()

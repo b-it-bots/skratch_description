@@ -8,10 +8,10 @@
     <xacro:arg name="use_sim" default="true"/>
 
     <!--Include necessary xacros-->
-    <xacro:include filename="$(find skratch_description)/base/skratch_base.xacro" />
-    <xacro:include filename="$(find skratch_description)/wheels/kelo_drive_top.urdf.xacro" />
-    <xacro:include filename="$(find skratch_description)/sensor_mounts/lidar_mount.xacro"/>
-    <xacro:include filename="$(find skratch_description)/base/kinova_arm_base_plate.xacro"/>
+    <xacro:include filename="$(find skratch_description)/description/base/skratch_base.xacro" />
+    <xacro:include filename="$(find skratch_description)/description/wheels/kelo_drive_top.urdf.xacro" />
+    <xacro:include filename="$(find skratch_description)/description/sensor_mounts/lidar_mount.xacro"/>
+    <xacro:include filename="$(find skratch_description)/description/base/kinova_arm_base_plate.xacro"/>
 
      
     <!-- Start building the robot -->
