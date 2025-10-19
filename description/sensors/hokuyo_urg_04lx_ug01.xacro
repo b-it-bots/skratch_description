@@ -43,7 +43,7 @@
 
     <!-- ↓↓↓ Move ray start point 5 cm below STL origin ↓↓↓ -->
     <joint name="${name}_ray_joint" type="fixed">
-      <origin xyz="0 0 -0.05" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.06" rpy="0 0 0"/>
       <parent link="${name}_stl_link"/>
       <child link="${name}_ray_link"/>
     </joint>
